@@ -19,7 +19,6 @@ jobs:
 
     - name: Generate Xcode Project
       run: xcodegen generate
-      working-directory: TMPlayer-iOS
 
     - name: Build App
       run: |
@@ -32,12 +31,11 @@ jobs:
           CODE_SIGNING_REQUIRED=NO \
           CODE_SIGNING_ALLOWED=NO \
           CONFIGURATION_BUILD_DIR=build
-      working-directory: TMPlayer-iOS
 
     - name: Package IPA
       run: |
         mkdir -p Payload
-        cp -r TMPlayer-iOS/build/TMPlayer.app Payload/
+        cp -r build/TMPlayer.app Payload/
         zip -r TMPlayer.ipa Payload
     
     - name: Upload Artifact
