@@ -7,7 +7,7 @@ options:
 packages:
   TDLibKit:
     url: https://github.com/Swiftgram/TDLibKit
-    exactVersion: 3.2.0
+    branch: main
 
 targets:
   TMPlayer:
