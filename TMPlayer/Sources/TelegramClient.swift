@@ -70,17 +70,17 @@ final class TelegramClient: ObservableObject {
             do {
                 switch state {
                 case .authorizationStateWaitTdlibParameters:
-                    try await client.setTdlibParameters(
-                        apiHash: "YOUR_API_HASH", // TODO: Replace or inject from env
-                        apiId: 123456,            // TODO: Replace or inject from env
+                    let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                    try? await client.setTdlibParameters(
+                        apiHash: "YOUR_API_HASH",
+                        apiId: 123456,
                         applicationVersion: "1.0",
-                        databaseDirectory: getDocsDir().appendingPathComponent("tdlib").path,
+                        databaseDirectory: documents + "/tdlib",
+                        databaseEncryptionKey: Data(),
                         deviceModel: "iOS",
-                        enableStorageOptimizer: true,
-                        filesDirectory: getDocsDir().appendingPathComponent("tdlib_files").path,
-                        ignoreFileNames: false,
+                        filesDirectory: documents + "/tdlib_files",
                         systemLanguageCode: "en",
-                        systemVersion: "16.0",
+                        systemVersion: "iOS 17",
                         useChatInfoDatabase: true,
                         useFileDatabase: true,
                         useMessageDatabase: true,
