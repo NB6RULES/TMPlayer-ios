@@ -22,6 +22,7 @@ jobs:
 
     - name: Build App
       run: |
+        xcodebuild -resolvePackageDependencies -project TMPlayer.xcodeproj
         xcodebuild clean build \
           -project TMPlayer.xcodeproj \
           -scheme TMPlayer \

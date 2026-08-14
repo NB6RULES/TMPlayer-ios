@@ -30,3 +30,4 @@ targets:
         CODE_SIGNING_ALLOWED: "NO"
     dependencies:
       - package: TDLibKit
+        product: TDLibKit
