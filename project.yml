@@ -1,0 +1,32 @@
+name: TMPlayer
+options:
+  bundleIdPrefix: com.tmplayer
+  deploymentTarget:
+    iOS: "16.0"
+
+packages:
+  TDLibKit:
+    url: https://github.com/Swiftgram/TDLibKit
+    exactVersion: 3.2.0
+
+targets:
+  TMPlayer:
+    type: application
+    platform: iOS
+    sources: [TMPlayer/Sources]
+    info:
+      path: TMPlayer/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIBackgroundModes:
+          - audio # Essential for background streaming/playback
+    settings:
+      base:
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGNING_ALLOWED: "NO"
+    dependencies:
+      - package: TDLibKit

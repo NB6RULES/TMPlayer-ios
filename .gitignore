@@ -1,0 +1,20 @@
+# Xcode
+build/
+*.pbxproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+.swiftpm/
+
+# Xcodegen
+TMPlayer.xcodeproj/
+
+# OS
+.DS_Store
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
